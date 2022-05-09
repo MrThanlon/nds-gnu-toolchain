@@ -36,10 +36,11 @@ jobs:
           apt-get update
           apt-get install -y texinfo flex bison
           ./build_${{ matrix.target }}.sh
+          tar -cJf ${{ matrix.target }}.tar.xz ${{ matrix.target }}
 
       - name: Archive
         uses: actions/upload-artifact@v3
         with:
           name: ${{ matrix.target }}
-          path: ${{ matrix.target }}
+          path: ${{ matrix.target }}.tar.xz
 
