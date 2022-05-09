@@ -19,6 +19,7 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    container: gcc:7
     strategy:
       matrix:
         target: ["nds64le-elf-newlib-v5d", "nds64le-linux-glibc-v5d"]
